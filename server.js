@@ -7,7 +7,12 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
+
+// Serve static files from public directory
+const staticPath = path.join(__dirname, 'public');
+console.log('Serving static files from:', staticPath);
+
+app.use(express.static(staticPath));
 
 // Quiz endpoint
 app.post('/api/quiz', (req, res) => {
@@ -16,10 +21,8 @@ app.post('/api/quiz', (req, res) => {
     submittedAt: new Date().toISOString()
   };
   
-  // Log to console (replace with email/database in production)
   console.log('📝 New Quiz Submission:', JSON.stringify(submission, null, 2));
   
-  // Return success with next steps
   res.json({
     success: true,
     message: 'Thanks for taking the quiz! We\'ll be in touch soon.',
@@ -27,9 +30,14 @@ app.post('/api/quiz', (req, res) => {
   });
 });
 
-// Serve the main page for all other routes (SPA-style)
+// Explicit root route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(staticPath, 'index.html'));
+});
+
+// Serve index.html for any other route (SPA-style)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(staticPath, 'index.html'));
 });
 
 app.listen(PORT, () => {
