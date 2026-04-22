@@ -15,6 +15,8 @@
     }
     .quiz-step { display: none; }
     .quiz-step.active { display: block; }
+    .blur-sm { filter: blur(4px); }
+    .blur-hover:hover { filter: blur(0); }
   </style>
 </head>
 <body class="bg-slate-900 text-white">
@@ -34,18 +36,48 @@
         <button onclick="scrollToQuiz()" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition">
           Take the Free Quiz
         </button>
-        <a href="#how-it-works" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 rounded-lg font-semibold transition">
+        <a href="#who-its-for" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 rounded-lg font-semibold transition">
           Learn More
         </a>
       </div>
     </div>
   </section>
 
+  <!-- Who It's For -->
+  <section id="who-its-for" class="py-24 px-6 bg-slate-800/50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-4">Who This Program Is Built For</h2>
+      <p class="text-slate-400 text-center mb-12">You're the perfect fit if...</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+          <div class="text-3xl mb-3">👔</div>
+          <h3 class="text-xl font-semibold mb-2">Solopreneurs</h3>
+          <p class="text-slate-400">You run the show and wear every hat. AI can be your secret weapon to work less and earn more.</p>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+          <div class="text-3xl mb-3">📈</div>
+          <h3 class="text-xl font-semibold mb-2">Small Business Owners</h3>
+          <p class="text-slate-400">You need systems that scale without hiring more staff. AI automation is the next best thing.</p>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+          <div class="text-3xl mb-3">⏰</div>
+          <h3 class="text-xl font-semibold mb-2">Time-Starved Professionals</h3>
+          <p class="text-slate-400">You have more ideas than hours in the day. Let's reclaim your time so you can focus on growth.</p>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+          <div class="text-3xl mb-3">🤖</div>
+          <h3 class="text-xl font-semibold mb-2">AI Curious (But Overwhelmed)</h3>
+          <p class="text-slate-400">You've heard the hype but don't know where to start. We cut through the noise with what's proven.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Quiz Section -->
-  <section id="quiz" class="py-24 px-6 bg-slate-800/50">
+  <section id="quiz" class="py-24 px-6">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl font-bold text-center mb-4">Discover Your AI Time-Savers</h2>
-      <p class="text-slate-400 text-center mb-12">Answer 6 quick questions and get a personalized action plan.</p>
+      <p class="text-slate-400 text-center mb-12">Answer 6 quick questions and get a free personalized action plan.</p>
       
       <form id="quiz-form" class="bg-slate-800 rounded-2xl p-8 border border-slate-700">
         <!-- Step 1: Industry -->
@@ -190,10 +222,10 @@
         <div class="quiz-step" data-step="6">
           <label class="block text-lg font-medium mb-4">6. Where should we send your results?</label>
           <input type="email" name="email" placeholder="your@email.com" class="w-full px-4 py-3 bg-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-          <p class="text-slate-400 text-sm mt-2">We'll also follow up with your personalized action plan.</p>
+          <p class="text-slate-400 text-sm mt-2">We'll send your free action plan and follow up with info on the $999 AI Audit.</p>
           <div class="mt-6 flex justify-between">
             <button type="button" onclick="prevStep()" class="px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-medium transition">← Back</button>
-            <button type="submit" class="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 rounded-lg font-semibold transition">Get My Plan →</button>
+            <button type="submit" class="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 rounded-lg font-semibold transition">Get My Free Plan →</button>
           </div>
         </div>
 
@@ -203,15 +235,39 @@
             <svg class="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
           </div>
           <h3 class="text-2xl font-bold mb-4">You're All Set!</h3>
-          <p class="text-slate-400 mb-6">Check your email for your personalized AI action plan. We'll be in touch within 24 hours.</p>
-          <a href="#how-it-works" class="inline-block px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-medium transition">Learn How It Works</a>
+          <p class="text-slate-400 mb-4">Check your email for your free personalized AI action plan.</p>
+          <p class="text-blue-400 font-medium mb-6">Ready for your $999 AI Audit? Book your call below.</p>
+          <a href="#audit" class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition">Book Your AI Audit</a>
         </div>
       </form>
     </div>
   </section>
 
+  <!-- AI Audit -->
+  <section id="audit" class="py-24 px-6 bg-slate-800/50">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">$999 AI Audit — Your First Step</h2>
+      <p class="text-xl text-slate-400 mb-8">
+        A 60-minute deep dive where we analyze your workflow, identify the biggest time-wasters, and build your personalized AI action plan.
+      </p>
+      <div class="bg-blue-600 rounded-2xl p-8 border border-blue-500 mb-8">
+        <p class="text-4xl font-bold mb-2">$999</p>
+        <p class="text-blue-200">One-time investment</p>
+        <ul class="text-left text-blue-100 mt-6 space-y-2">
+          <li>✓ 60-minute strategy call</li>
+          <li>✓ Personalized AI action plan</li>
+          <li>✓ Tool recommendations tailored to your business</li>
+          <li>✓ Implementation roadmap</li>
+        </ul>
+      </div>
+      <a href="#quiz" class="inline-block px-8 py-4 bg-white text-blue-600 hover:bg-blue-50 rounded-lg font-semibold transition">
+        Schedule Your Audit
+      </a>
+    </div>
+  </section>
+
   <!-- How It Works -->
-  <section id="how-it-works" class="py-24 px-6 bg-slate-800/50">
+  <section id="how-it-works" class="py-24 px-6">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-bold text-center mb-16">How SmartShift Works</h2>
       <div class="grid md:grid-cols-3 gap-8">
@@ -227,7 +283,7 @@
             <svg class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </div>
           <h3 class="text-xl font-semibold mb-2">2. Get Your Audit</h3>
-          <p class="text-slate-400">Receive a personalized action plan with AI tools tailored to your business and workflow.</p>
+          <p class="text-slate-400">Book your $999 AI Audit for a personalized action plan with AI tools tailored to your business.</p>
         </div>
         <div class="text-center">
           <div class="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -240,18 +296,81 @@
     </div>
   </section>
 
+  <!-- Resources -->
+  <section id="resources" class="py-24 px-6 bg-slate-800/50">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-4">Free Resources</h2>
+      <p class="text-slate-400 text-center mb-12">Get started with these free tools. Unlock more when you subscribe.</p>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Prompt Library -->
+        <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-semibold">📝 Prompt Library</h3>
+            <span class="text-xs bg-slate-700 px-2 py-1 rounded">Free</span>
+          </div>
+          <ul class="space-y-3 text-slate-400">
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-400">✓</span> Email response template
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-400">✓</span> Social media caption generator
+            </li>
+            <li class="flex items-center gap-2 opacity-50">
+              <span class="text-slate-500">🔒</span> Business proposal prompts
+            </li>
+            <li class="flex items-center gap-2 opacity-50">
+              <span class="text-slate-500">🔒</span> Customer objection responses
+            </li>
+            <li class="flex items-center gap-2 opacity-50">
+              <span class="text-slate-500">🔒</span> Content repurposing prompts
+            </li>
+          </ul>
+          <a href="#quiz" class="mt-6 block text-center py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-medium transition">Get Free Prompts</a>
+        </div>
+
+        <!-- Video Library -->
+        <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-semibold">🎥 Video Library</h3>
+            <span class="text-xs bg-slate-700 px-2 py-1 rounded">Free</span>
+          </div>
+          <ul class="space-y-3 text-slate-400">
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-400">✓</span> Getting started with ChatGPT
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-emerald-400">✓</span> 5-minute AI workflow setup
+            </li>
+            <li class="flex items-center gap-2 opacity-50">
+              <span class="text-slate-500">🔒</span> Advanced prompting techniques
+            </li>
+            <li class="flex items-center gap-2 opacity-50">
+              <span class="text-slate-500">🔒</span> Automating social media with AI
+            </li>
+            <li class="flex items-center gap-2 opacity-50">
+              <span class="text-slate-500">🔒</span> Building AI-powered workflows
+            </li>
+          </ul>
+          <a href="#quiz" class="mt-6 block text-center py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-medium transition">Watch Free Videos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Pricing -->
   <section class="py-24 px-6">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-16">Simple, Transparent Pricing</h2>
+      <h2 class="text-3xl font-bold text-center mb-4">Monthly Subscriptions</h2>
+      <p class="text-slate-400 text-center mb-12">After your AI Audit, choose a plan that fits your needs.</p>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700">
           <h3 class="text-xl font-semibold mb-2">Essentials</h3>
           <p class="text-4xl font-bold mb-4">$297<span class="text-lg text-slate-400 font-normal">/mo</span></p>
           <ul class="space-y-3 text-slate-400 mb-8">
-            <li>✓ Curated video library</li>
-            <li>✓ AI prompt templates</li>
-            <li>✓ Quarterly check-in call</li>
+            <li>✓ Full Prompt Library access</li>
+            <li>✓ Full Video Library access</li>
+            <li>✓ Monthly check-in call</li>
           </ul>
           <button onclick="scrollToQuiz()" class="w-full py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-medium transition">Get Started</button>
         </div>
@@ -261,9 +380,9 @@
           <p class="text-4xl font-bold mb-4">$497<span class="text-lg text-blue-200 font-normal">/mo</span></p>
           <ul class="space-y-3 text-blue-100 mb-8">
             <li>✓ Everything in Essentials</li>
-            <li>✓ Bi-weekly strategy calls</li>
+            <li>✓ Monthly strategy calls</li>
             <li>✓ Custom workflow designs</li>
-            <li>✓ Priority content access</li>
+            <li>✓ Priority support</li>
           </ul>
           <button onclick="scrollToQuiz()" class="w-full py-3 bg-white text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition">Get Started</button>
         </div>
@@ -272,26 +391,13 @@
           <p class="text-4xl font-bold mb-4">$997<span class="text-lg text-slate-400 font-normal">/mo</span></p>
           <ul class="space-y-3 text-slate-400 mb-8">
             <li>✓ Everything in Pro</li>
-            <li>✓ Monthly strategy session</li>
+            <li>✓ Bi-weekly strategy calls</li>
             <li>✓ Team training (up to 5)</li>
             <li>✓ Custom integrations</li>
           </ul>
           <button onclick="scrollToQuiz()" class="w-full py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-medium transition">Get Started</button>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Initial Audit -->
-  <section class="py-24 px-6 bg-slate-800/50">
-    <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">Start with a Free Discovery Call</h2>
-      <p class="text-xl text-slate-400 mb-8">
-        Not sure which tier is right for you? Book a free 15-minute call and we'll figure it out together.
-      </p>
-      <button onclick="scrollToQuiz()" class="inline-block px-8 py-4 bg-emerald-600 hover:bg-emerald-700 rounded-lg font-semibold transition">
-        Book Your Free Call
-      </button>
     </div>
   </section>
 
@@ -313,7 +419,7 @@
 
     function showStep(step) {
       document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
-      document.querySelector(`[data-step="${step}"]`).classList.add('active');
+      document.querySelector('[data-step="' + step + '"]').classList.add('active');
       currentStep = step;
     }
 
